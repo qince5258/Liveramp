@@ -1,0 +1,33 @@
+[{
+  "name": "My Data",
+  "value": [{
+    "name": "DeviceReach-ppid",
+    "value": [
+      {
+        "name": "AdultComposition",
+        "id": 1,
+        "icon": ""
+      },
+      {
+        "name": "Age",
+        "id": 2,
+        "icon": ""
+      },
+      {
+        "name": "Education",
+        "id": 3,
+        "icon": ""
+      },
+      {
+        "name": "Gender",
+        "id": 4,
+        "icon": ""
+      },
+      {
+        "name": "PresenceofChild",
+        "id": 5,
+        "icon": ""
+      }
+    ]
+  }]
+}]

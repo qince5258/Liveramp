@@ -1,0 +1,17 @@
+.sidebar-wrap {
+  width: 40%;
+  background-color: rgb(252, 253, 253);
+  min-height: 100%;
+  border-right: 1px solid rgba(204,204,204,0.6);
+  padding-right: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 47px;
+  padding-left: 20px;
+  padding-right: 20px;
+  align-items: center;
+  border-bottom: 1px solid rgba(204,204,204,0.4);
+}
