@@ -27,7 +27,7 @@ export default function Group(props: TermProps) {
 		axios.get('/api', {
 			params: {term: term}
 		}).then(res => {
-			if (res.data.code == 1) {
+			if (res.data.code === 1) {
 				const data = res.data.result || []
 				setOptions(data)
 			} else {
@@ -36,7 +36,7 @@ export default function Group(props: TermProps) {
 		}).catch(err => {
 			console.log(err)
 		})
-	},[])
+	}, [])
 
 	/**
 	 * checkbox change status
@@ -65,7 +65,7 @@ export default function Group(props: TermProps) {
 	 * guess remove the term
 	 */
 	const close = () => {
-		dispatch(removeTerm({id: id, elementName: route}))
+		dispatch(removeTerm({id: id, term: route}))
 
 	}
 

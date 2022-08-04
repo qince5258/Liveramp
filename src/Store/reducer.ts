@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { TermVal } from '../Protype/termPram'
 
 /**
  *  groups: [
@@ -18,7 +19,7 @@ const myData = createSlice({
   name: "elementMove",
   initialState: {
     elementName: '',
-    groups: []
+    groups: [] as any[]
   },
   reducers: {
     dragBegin(state, action) {
@@ -29,10 +30,9 @@ const myData = createSlice({
       const { id, term = '' } = action.payload || {}
       if (id) {
         //group 里面新增元素
-       state.groups?.forEach((group:any) => {
-         if (group.id == id) {
+       state.groups?.forEach((group: TermVal) => {
+         if (group.id === id) {
            group.term.push(term)
-           group.term = [...new Set(group.term)] 
          }
        })
       } else {
@@ -45,11 +45,24 @@ const myData = createSlice({
         state.groups.push(newGroup)
       }
     },
+    removeTerm(state, action) {
+      const { id, term } = action.payload || {};
+      state.groups.forEach(arg => {
+        if (arg.id === id) {
+          arg.term = arg.term.filter((name: string) => name !== term)
+        }
+      })
+
+      state.groups = state.groups.filter((group: TermVal) => {
+        return group.term.length > 0
+      })
+      
+    }
   },
 });
 
 //导出 action
-export const { dragBegin, addGroup } = myData.actions;
+export const { dragBegin, addGroup, removeTerm } = myData.actions;
 
 //导出异步action 可以处理异步请求 不需要可忽略
 // export const pushElementSync = (payload) => {
