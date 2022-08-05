@@ -38,6 +38,7 @@ export default function Group(props: TermProps) {
         if (res.data.code === 1) {
           const data = res.data.result || [];
           setOptions(data);
+          setSearchRes(data)
         } else {
           console.log(res.data.message);
         }

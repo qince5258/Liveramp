@@ -37,10 +37,10 @@ const mockData = {
 
 function getData(key) {
   const data = mockData[key];
-  const res = data.map(args => {
+  const res = data.map((args,index) => {
     return {
       value : args,
-      count: parseInt(Math.random()*200)
+      count: index*100+ 4
     }
   })
   return res
