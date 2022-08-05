@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import "./style.css";
 import { useDispatch } from "react-redux";
 import { dragBegin } from "../../Store/reducer";
-import { MenuData, SecondMenu, ThirdMenu } from '../../Protype/menu'
+import { MenuData, SecondMenu, ThirdMenu } from '../../Protype/menu';
+
+const bookImg = require('../../assets/Images/book.png');
+const iconImg = require('../../assets/Images/icon.png');
 
 interface IProps {
   data: MenuData; //menu name
@@ -59,7 +62,7 @@ export default function Menu(props: IProps) {
       <div className="list-wrap">
         <div className="container level1" onClick={ChangeFirst}>
           <img className="list-status" src={FirstMenu ? down : left} alt="" aria-checked={true} />
-          <img className="listIcon" src={icon ?? ""} alt="" />
+          <img className="list-status" src={bookImg} alt="" />
           <div className="listName">{data.name}</div>
         </div>
         {!!FirstMenu && (
@@ -73,7 +76,7 @@ export default function Menu(props: IProps) {
                       src={SecondMenu ? down : left}
                       alt=""
                     />
-                    <img className="listIcon" src={icon ?? ""} alt="" />
+                    <img className="list-status" src={bookImg} alt="" />
                     <div className="listName">{item.name}</div>
                   </div>
                   {!!SecondMenu && (
@@ -90,11 +93,11 @@ export default function Menu(props: IProps) {
                             <div className="container">
                               <img className="list-status" src={point} alt="" />
                               <img
-                                className="listIcon"
-                                src={icon ?? ""}
+                                className="list-status"
+                                src={child.icon || iconImg}
                                 alt=""
                               />
-                              <div className="listName">{child.name}</div>
+                              <div className="list-status">{child.name}</div>
                             </div>
                           </div>
                         );
