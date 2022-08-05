@@ -143,3 +143,17 @@
 .checked-text {
   flex: 1;
 }
+
+.flod {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.searchRes {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
